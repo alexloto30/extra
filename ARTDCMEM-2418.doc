@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>[#ARTDCMEM-2418] [S32K5][Mem_Mram]: Extend parts of Code MRAM as the Data MRAM</title>
+    <meta http-equiv="Content-Type" Content="application/vnd.ms-word; charset=UTF-8">
+        <style type="text/css">
+
+.tableBorder, .grid
+{
+    background-color: #fff;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tableBorder td, .grid td
+{
+    vertical-align: top;
+    padding: 2px;
+    border: 1px solid #ccc;
+}
+
+.noPadding
+{
+    padding: 0 !important;
+}
+
+h3 .subText
+{
+    font-size: 60%;
+    font-weight: normal;
+}
+
+.tabLabel
+{
+    font-weight: bold;
+    border: 1px solid #ccc;
+    border-bottom:none;
+    padding: 2px;
+    display: inline;
+}
+
+td.blank
+{
+    padding: 0;
+    margin: 0;
+}
+
+.blank td
+{
+    border: none;
+}
+
+#descriptionArea
+{
+    margin: 0;
+    padding: 2px;
+    border: 1px solid #ccc;
+}
+
+hr
+{
+    border-top:1px solid #aaa;
+}
+
+hr.fullcontent
+{
+  height: 15px;
+  padding: 10px 0;
+  background: #fff url('https://jira.sw.nxp.com/images/icons/hr.gif') no-repeat scroll center;
+}
+
+</style>
+
+</head>
+<body>
+
+<table class="tableBorder" cellpadding="0" cellspacing="0" border="0" width="100%">
+    <tr>
+        <td bgcolor="#f0f0f0" width="100%" colspan="2" valign="top">
+                            <h3 class="formtitle">
+                        [ARTDCMEM-2418]&nbsp;<a href="https://jira.sw.nxp.com/browse/ARTDCMEM-2418">[S32K5][Mem_Mram]: Extend parts of Code MRAM as the Data MRAM</a>
+            <span class="subText">
+               Created: 04/Sep/26                   &nbsp;Updated: 30/Sep/26
+
+                                            </span>
+            </h3>
+        </td>
+    </tr>
+    <tr>
+        <td width="20%"><b>Status:</b></td>
+        <td width="80%">In Review</td>
+    </tr>
+    <tr>
+        <td width="20%"><b>Project:</b></td>
+        <td width="80%"><a href="https://jira.sw.nxp.com/secure/BrowseProject.jspa?id=25142">Memories</a></td>
+    </tr>
+
+        <tr>
+            <td><b>Component/s:</b></td>
+            <td>
+                                        <a title="Mem_Mram - Memory Driver - Magnetic RAM"
+                href="https://jira.sw.nxp.com/issues/?jql=project%3D25142%20AND%20%22component%22%3D57629%20ORDER%20BY%20priority%20ASC"
+            >Mem_Mram</a>                        </td>
+    </tr>
+    
+
+        <tr>
+            <td><b>Affects Version/s:</b></td>
+            <td>
+                            None
+                </td>
+    </tr>
+    
+
+        <tr>
+            <td><b>Fix Version/s:</b></td>
+            <td>
+                                        <a title="BLN_RTD_4.9_S32K5_1.0.0 - FC :4-sep , TDCP :10-sep , CF :30-sep , RRR ready : 5-oct, Safety Review :8-oct"
+                href="https://jira.sw.nxp.com/issues/?jql=project%3D25142%20AND%20%22fixVersion%22%3D121940%20ORDER%20BY%20priority%20ASC"
+            >BLN_RTD_4.9_S32K5_1.0.0</a>                        </td>
+    </tr>
+    
+    </table>
+
+<br />
+<table class="grid" cellpadding="0" cellspacing="0" border="0" width="100%">
+    <tr>
+        <td bgcolor="#f0f0f0" valign="top" width="20%">
+            <b>Type:</b>
+        </td>
+        <td bgcolor="#ffffff" valign="top"  width="30%" >
+            Story
+        </td>
+
+                    <td bgcolor="#f0f0f0">
+                <b>Priority:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top" nowrap>
+                2 - High
+            </td>
+            </tr>
+    <tr>
+                        <td bgcolor="#f0f0f0" valign="top" width="20%">
+                <b>Reporter:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top"  width="30%" >
+                                            <a class="user-hover" rel="nxf50137" id="word_reporter_nxf50137" href="https://jira.sw.nxp.com/secure/ViewProfile.jspa?name=nxf50137">Stephen Du</a>
+                            </td>
+        
+                    <td bgcolor="#f0f0f0" width="20%">
+                <b>Assignee:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top" nowrap  width="30%" >
+                                            <a class="user-hover" rel="nxf81166" id="word_assignee_nxf81166" href="https://jira.sw.nxp.com/secure/ViewProfile.jspa?name=nxf81166">Alexandru Lotorosanu</a>
+                            </td>
+            </tr>
+    	<tr>
+		<td bgcolor="#f0f0f0" width="20%">
+			<b>Resolution:</b>
+		</td>
+		<td bgcolor="#ffffff" valign="top" width="30%" nowrap>
+            				Unresolved
+                    </td>
+                    <td bgcolor="#f0f0f0" width="20%">
+                <b>Votes:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top" width="30%" nowrap>
+                0
+            </td>
+        
+    </tr>
+    
+        <tr>
+        <td bgcolor="#f0f0f0" width="20%">
+            <b>Labels:</b>
+        </td>
+        <td id="labels-4381154-value" class="value" bgcolor="#ffffff" valign="top" colspan="3" nowrap>
+                            None
+                    </td>
+    </tr>
+    
+    	<tr>
+        		<td bgcolor="#f0f0f0" width="20%"><b>Remaining Estimate:</b></td>
+        <td bgcolor="#ffffff" valign="top" nowrap width="80%" colspan="3">
+                            Not Specified
+            		</td>
+    </tr>
+    <tr>
+                <td bgcolor="#f0f0f0" width="20%"><b>Time Spent:</b></td>
+		<td bgcolor="#ffffff" valign="top" nowrap width="80%" colspan="3">
+                            16h
+            		</td>
+	</tr>
+    <tr>
+                <td bgcolor="#f0f0f0" width="20%"><b>Original Estimate:</b></td>
+		<td bgcolor="#ffffff" valign="top" nowrap width="80%" colspan="3">
+                            Not Specified
+            		</td>
+    </tr>
+    
+    </table>
+
+
+
+    <br />
+
+    	<table class="grid" cellpadding="0" cellspacing="0" border="0" width="100%">
+            
+
+        
+            <tr>
+            <td bgcolor="#f0f0f0" width="20%" valign="top">
+                <b>Issue Links:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top" class="noPadding">
+                <table cellpadding="0" cellspacing="0" border="0" width="100%" class="blank">
+                                            <tr>
+                            <td colspan="4" bgcolor="#f0f0f0">
+                                <b>Agile Hive Link</b><br/>
+                            </td>
+                        </tr>
+                                    <tr>
+            <td>
+                Hive - Child of
+            </td>
+            <td>
+                <a href="https://jira.sw.nxp.com/browse/ARTDC-809">
+                     ARTDC-809                 </a>
+            </td>
+            <td>
+                Enable FEE Storage in Code MRAM While...
+            </td>
+            <td>
+                In Progress
+            </td>
+        </tr>
+                                                                            <tr>
+                            <td colspan="4" bgcolor="#f0f0f0">
+                                <b>Agile Hive Objective Link</b><br/>
+                            </td>
+                        </tr>
+                                                                <tr>
+            <td>
+                Hive - Is Objective of
+            </td>
+            <td>
+                <a href="https://jira.sw.nxp.com/browse/ARTDCMEM-2621">
+                     ARTDCMEM-2621                 </a>
+            </td>
+            <td>
+                Deliver customer commitments
+            </td>
+            <td>
+                Open
+            </td>
+        </tr>
+                                                <tr>
+                            <td colspan="4" bgcolor="#f0f0f0">
+                                <b>Cloners</b><br/>
+                            </td>
+                        </tr>
+                                    <tr>
+            <td>
+                clones
+            </td>
+            <td>
+                <a href="https://jira.sw.nxp.com/browse/ELZO-1010">
+                     <strike>ELZO-1010</strike>                 </a>
+            </td>
+            <td>
+                [S32K5][MRAM]: Extend parts of Code M...
+            </td>
+            <td>
+                Closed
+            </td>
+        </tr>
+                                                                    </table>
+            </td>
+        </tr>
+    
+
+
+
+                                    <tr>
+                <td bgcolor="#f0f0f0" width="20%" valign="top"><b>Milestone:</b></td>
+                <td id="customfield_15904-4381154-value" class="value" bgcolor="#ffffff" width="80%">    Code Freeze
+</td>
+            </tr>
+                                <tr>
+                <td bgcolor="#f0f0f0" width="20%" valign="top"><b>Board(s) Affected:</b></td>
+                <td id="customfield_10300-4381154-value" class="value" bgcolor="#ffffff" width="80%">
+
+
+    <div class="shorten" id="customfield_10300-field">
+        							<span>S32K5</span>,			        							<span>S32K566</span>			            </div>
+</td>
+            </tr>
+                                                                                            <tr>
+                <td bgcolor="#f0f0f0" width="20%" valign="top"><b>Original Reporter (role):</b></td>
+                <td id="customfield_10404-4381154-value" class="value" bgcolor="#ffffff" width="80%">    Customer external / Customer support
+</td>
+            </tr>
+                                <tr>
+                <td bgcolor="#f0f0f0" width="20%" valign="top"><b>Story Points:</b></td>
+                <td id="customfield_10002-4381154-value" class="value" bgcolor="#ffffff" width="80%">    1
+</td>
+            </tr>
+                                <tr>
+                <td bgcolor="#f0f0f0" width="20%" valign="top"><b>Customer(s) Affected:</b></td>
+                <td id="customfield_10113-4381154-value" class="value" bgcolor="#ffffff" width="80%">    PATAC/UAES</td>
+            </tr>
+                                                                                                                                                        <tr>
+                <td bgcolor="#f0f0f0" width="20%" valign="top"><b>Sprint:</b></td>
+                <td id="customfield_10005-4381154-value" class="value" bgcolor="#ffffff" width="80%">PI 26.4 - S1 - ARTDCMEM</td>
+            </tr>
+                                                                                                                <tr>
+                <td bgcolor="#f0f0f0" width="20%" valign="top"><b>Analysis Report:</b></td>
+                <td id="customfield_10602-4381154-value" class="value" bgcolor="#ffffff" width="80%">      <h2><a name="Technicalfeasibility%28Y%2FN%29"></a><b>Technical feasibility (Y/N)</b></h2>
+
+<p>&gt; to be filled &lt;</p>
+
+<h2><a name="Detailsoftheproposedsolution%28WhatisthebenefitwhenthisCRisimplemented%3F%29"></a><b>Details of the proposed solution (What is the benefit when this CR is implemented?)</b></h2>
+
+<p>&gt; to be filled &lt;</p>
+
+<h2><a name="Riskanalysis%28Analysisandimpactofthefixontheproduct%29%3ALOW%28riskcanbeforeseenandiscomputable%29%2FHIGH%28furtherriskanalysisneedstobetriggeredbyCCB%29"></a><b>Risk analysis (Analysis and impact of the fix on the product): LOW (risk can be foreseen and is computable) / HIGH (further risk analysis needs to be triggered by CCB)</b></h2>
+
+<p>&gt; to be filled &lt;</p>
+
+<h2><a name="Impactanalysis"></a><b>Impact analysis</b></h2>
+
+<h3><a name="Safetyimpactanalysis%3A"></a>Safety impact analysis:</h3>
+<ul>
+	<li><b>Yes</b>: &gt;Reason to be filled&lt;&gt;List the Impacted Safety deliverables &lt; <b>mandatory</b></li>
+	<li><b>No</b> : &gt;Reason to be filled&lt; <b>mandatory</b></li>
+</ul>
+
+
+
+<h3><a name="Effortestimationfor%3A"></a><b>Effort estimation for:</b></h3>
+<ul>
+	<li><b>CR implementation (incl. unit testing)</b><br/>
+&gt; to be filled &lt;</li>
+</ul>
+
+
+<ul>
+	<li><b>Requirement updates incl. review</b>
+	<ul>
+		<li><b>New</b><br/>
+&gt; to be filled &lt;</li>
+		<li><b>Update (link to requirements)</b><br/>
+&gt; to be filled &lt;</li>
+		<li><b>Removal (link to requirements)</b><br/>
+&gt; to be filled &lt;</li>
+	</ul>
+	</li>
+	<li><b>Test specification, implementation and execution</b><br/>
+&gt; to be filled &lt;</li>
+	<li><b>Required resources</b><br/>
+&gt; to be filled &lt;</li>
+	<li><b>Effort summary: High/Low (depending of threshold value, see PMP)</b><br/>
+&gt; to be filled &lt;</li>
+</ul>
+
+
+
+<h3><a name="Module%28s%29involved"></a><b>Module(s) involved</b></h3>
+
+<p>&gt; to be filled &lt;</p>
+
+<h3><a name="Test%28s%29involved"></a><b>Test(s) involved</b></h3>
+
+<p>&gt; to be filled &lt;</p>
+
+<h3><a name="FDO%2FAMDdeliverables%28e.g.docs%29involved"></a><b>FDO/AMD deliverables (e.g. docs) involved</b></h3>
+
+<p>&gt; to be filled &lt;</p>
+
+<h3><a name="SubSystem%28s%29andteam%28s%29"></a><b>Sub-System(s) and team(s)</b></h3>
+
+<p>&gt; to be filled &lt;</p>
+  </td>
+            </tr>
+                                            <tr>
+                <td bgcolor="#f0f0f0" width="20%" valign="top"><b>Impacted Deliverables:</b></td>
+                <td id="customfield_15201-4381154-value" class="value" bgcolor="#ffffff" width="80%">
+
+
+    <div class="shorten" id="customfield_15201-field">
+        							<span>Code</span>			            </div>
+</td>
+            </tr>
+                                    <tr>
+                <td bgcolor="#f0f0f0" width="20%" valign="top"><b>Resolution Text:</b></td>
+                <td id="customfield_10401-4381154-value" class="value" bgcolor="#ffffff" width="80%">      see  <a href="https://jira.sw.nxp.com/browse/ELZO-1041" title="Enable FEE Storage in Code MRAM While Preserving Full Swap OTA Capability (RFP)" class="issue-link" data-issue-key="ELZO-1041">ELZO-1041</a> 
+  </td>
+            </tr>
+                                            <tr>
+                <td bgcolor="#f0f0f0" width="20%" valign="top"><b>RelNote Visible:</b></td>
+                <td id="customfield_11603-4381154-value" class="value" bgcolor="#ffffff" width="80%">    NO
+</td>
+            </tr>
+                                                                                                                    </table>
+
+    <br/>
+
+    <table cellpadding="2" cellspacing="0" border="0" width="100%" align="center">
+    <tr>
+        <td bgcolor="#bbbbbb" width="1%" nowrap align="center">
+            &nbsp;<font color="#ffffff"><b>Description</b></font>&nbsp;
+        </td>
+        <td>&nbsp;</td>
+    </tr>
+    </table>
+
+    <table cellpadding="0" cellspacing="0" border="0" width="100%">
+    <tr>
+        <td id="descriptionArea">
+            <h3><a name="Description"></a>Description</h3>
+
+<p>The customer requires approximately 300 KB of non-volatile memory to implement the FEE (Flash EEPROM Emulation) functionality in their application. Normally, FEE is implemented using Data Flash(data MRAM); however, the available Data MRAM size is only 256 KB, which is insufficient for the customer's storage requirement.</p>
+
+<p>As a potential workaround, the customer is considering using a portion of the Code MRAM for FEE storage. The device provides a total of 32 MB Code MRAM. At the same time, the customer plans to support Full Swap OTA, which requires the Code MRAM to be divided into two equal partitions: 16 MB for Image A and 16 MB for Image B.</p>
+
+<p>The key question is whether FEE can still be implemented using Code MRAM while maintaining Full Swap OTA capability, and how the memory resources should be allocated to satisfy both requirements.</p>
+<h3><a name="BenefitHypothesis"></a>Benefit Hypothesis</h3>
+
+<p>Providing a solution that enables FEE implementation using Code MRAM would allow customers requiring more than 256 KB of non-volatile storage to adopt the device without changing their software architecture.</p>
+
+<p>In addition, maintaining compatibility with Full Swap OTA would allow customers to achieve both FEE and OTA capabilities, improving system flexibility and reducing migration effort.</p>
+<h3><a name="AcceptanceCriteria"></a>Acceptance Criteria</h3>
+<ul>
+	<li>Evaluate whether Code MRAM can be partially allocated for FEE storage while supporting Full Swap OTA.</li>
+	<li>Determine the available Code MRAM capacity for FEE after OTA partitioning requirements are considered.</li>
+	<li>Define a feasible memory allocation strategy that supports:
+	<ul>
+		<li>Full Swap OTA operation (Image A + Image B)</li>
+		<li>At least 300 KB FEE storage requirement</li>
+	</ul>
+	</li>
+	<li>Clearly document any trade-offs, restrictions, or unsupported use cases.</li>
+</ul>
+
+
+<p><b>Proposal one workaround method:</b></p>
+<ul>
+	<li><b>Driver requirement.</b> The FEE MRAM driver must <b>recognize the A/B swap state and apply the corresponding address offset</b> at runtime, so that after an OTA it reads and writes the correct active FEE region and non-volatile data stays consistent across updates.</li>
+</ul>
+
+            <br/>
+        </td>
+    </tr>
+    </table>
+
+Generated at Wed Sep 30 09:29:02 CEST 2026 by Alexandru Lotorosanu using Jira 10.3.21#10030021-sha1:1b57c64b79893799c54a69ac24cc209127fad1fe.
+
+</body>
+</html>
